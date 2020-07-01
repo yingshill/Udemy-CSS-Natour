@@ -1,0 +1,17 @@
+{
+    "name": "natours-advanced-css",
+    "version": "1.0.0",
+    "description": "landing page for natours",
+    "main": "index.js",
+    "scripts": {
+        "compile:sass": "node-sass starter/sass/main.scss starter/css/style.css -w",
+        "watch:sass": "nodemon -e scss -x \"npm run compile:sass\""
+    },
+    "author": "Yignshi Liu",
+    "license": "ISC",
+    "devDependencies": {
+        "node-sass": "^4.14.1",
+        "nodemon": "^2.0.4"
+    },
+    "dependencies": {}
+}

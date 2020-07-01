@@ -1,0 +1,52 @@
+    .btn {
+        &:link,
+        &:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.5rem 4rem;
+            display: inline-block;
+            border-radius: 10rem;
+            transition: all .2s;
+            /* there will be possible animation, and transform tells how the transition would be */
+            font-size: 1.6rem;
+        }
+        &:hover {
+            transform: translateY(-o.3rem);
+            /* for Y, if it's up, then it's negative */
+            box-shadow: 0 10px 20px rgba($color-black, 0.719);
+        }
+        &:active {
+            transform: translateY(-0.1rem);
+            box-shadow: 0 5px 10px rgba(250, 248, 248, 0.5);
+        }
+        &--white {
+            background-color: $color-white;
+            color: $color-grey-dark;
+            &::after {
+                background-color: $color-white;
+            }
+        }
+    }
+    
+    .btn-next {
+        &:link,
+        &:visited {
+            font-size: $default-font-size;
+            color: $color-white;
+            display: inline-block;
+            text-decoration: none;
+            padding: .3rem;
+            transition: all .2s;
+            background-color: $color-primary;
+            border-radius: 30%;
+        }
+        &:hover {
+            color: $color-white;
+            box-shadow: 0 .1rem 2rem rgba($color-black, .15);
+            transform: translateY(-2px);
+        }
+        &:active {
+            box-shadow: 0 .1rem 1rem rgba($color-black, .15);
+            transform: translateY(0);
+        }
+    }

@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px. This defined what 1rem is */
+}
+
+body {
+    box-sizing: border-box;
+    /* The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not. */
+}
