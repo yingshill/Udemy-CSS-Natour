@@ -5,7 +5,6 @@
         /* font-size: 16px; */
         line-height: 1.7;
         color: $color-grey-dark;
-        padding: 3rem;
         box-sizing: border-box;
         /* The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not. */
     }
@@ -15,7 +14,7 @@
         text-transform: uppercase;
         backface-visibility: hidden;
         margin-bottom: 6rem;
-        &-primary--main {
+        &--main {
             display: block;
             font-size: 6rem;
             font-weight: 400;
@@ -23,8 +22,16 @@
             animation-name: moveInLeft;
             animation-duration: 1s;
             animation-timing-function: ease-out;
+            @include respond(tab-port) {
+                letter-spacing: .5rem;
+                font-size: 5rem;
+            }
+            @include respond(phone) {
+                letter-spacing: .5rem;
+                font-size: 5rem;
+            }
         }
-        &-primary--sub {
+        &--sub {
             display: block;
             font-size: 2rem;
             font-weight: 700;
@@ -38,11 +45,15 @@
         text-transform: uppercase;
         font-weight: 700;
         display: inline-block;
-        /* background-image: linear-gradient(to-right, color-primary-light-least, $color-primary);
-        background-clip: text;
-        color: transparent; */
+        color: $color-black;
         letter-spacing: 2px;
         transition: all .2s;
+        @include respond(tab-port) {
+            font-size: 2.5rem;
+        }
+        @include respond(phone) {
+            font-size: 2rem;
+        }
         &:hover {
             transform: skewY(2deg) skewX(2deg) scale(1.1);
             text-shadow: .5rem 1rem 2rem rgba($color-black, .2);

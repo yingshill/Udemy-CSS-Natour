@@ -1,0 +1,73 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed; // it won't move around;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    //open state
+    &:target {
+        opacity: 1;
+        visibility: visible;
+        transition: all .3s .2s;
+        &__content {
+            transform: translate(-50%, -50%) scale(1);
+            transition: all .4s;
+        }
+    }
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 3rem;
+            transition: all .2s;
+            line-height: 1;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+    }
+    &__content {
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        display: table;
+        overflow: hidden; // images are underneath the whole box;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.5);
+        transition: all .4s;
+    }
+    &__left {
+        width: 33.3333%;
+        display: table-cell;
+    }
+    &__right {
+        width: 66.6666%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+    &__img {
+        display: block;
+        width: 100%;
+    }
+    &__text {
+        font-size: 1.4rem;
+        -moz-column-count: 2; //automatically create 2 columns
+        column-gap: 2em; //1em = 14px;
+        column-rule: 1px solid $color-grey-light-2;
+        hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+    }
+}
